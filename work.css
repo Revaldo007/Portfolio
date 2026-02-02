@@ -1,0 +1,120 @@
+/* Your Original Styles (kept exactly) */
+* {
+  text-decoration: none;
+}
+body {
+  font-family: arial;
+}
+
+.box1 {
+  display: flex;
+  margin: 2px;
+  padding: 2px;
+  height: 725px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 100px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.text p {
+  margin-left: 200px;
+  white-space: normal;
+  width: 900px;
+  font-size: 35px;
+}
+
+.proj-video {
+  margin: 2px;
+  padding-top: 10px;
+  object-fit: contain;
+  height: auto;
+  width: 400px;
+  margin-left: 250px;
+}
+
+/* ------------------------------------ */
+/* NEW ANIMATION + TITLE SYSTEM ADDED   */
+/* ------------------------------------ */
+
+/* Container for all titles */
+.work-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Each title block (replaces your previous box1 title area) */
+.title-block {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+/* Title text centered initially */
+.title-block h2 {
+  text-align: center;
+}
+
+/* When clicked: slide left */
+.active-title {
+  transform: translateX(-650px);
+}
+
+/* When not selected: hide */
+.hidden-title {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Content (p tag + image/video) appears on right */
+.content-block {
+  position: absolute;
+  top: 0;
+  right: -35%;
+  width: 60%;
+  opacity: 0;
+}
+.fun {
+  position: relative;
+  right: 0;
+  top: 50px;
+}
+
+
+/* Fade + slide animation */
+.fade-slide-in {
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Support videos/images */
+.proj-media {
+  width: 400px;
+  margin-left: 200px;
+  margin-top: 20px;
+  border-radius: 8px;
+}

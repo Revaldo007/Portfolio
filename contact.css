@@ -1,0 +1,209 @@
+/* PAGE WRAPPER ONLY (Fixes background issue) */
+.contact-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 80px); /* height minus navbar */
+  background-color: var(--neu-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px; /* match navbar height */
+}
+
+/* DO NOT MODIFY ANYTHING BELOW — original design preserved */
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+:root {
+  --neu-1: #ecf0f3;
+  --neu-2: #d1d9e6;
+  --white: #f9f9f9;
+  --gray: #a0a5a8;
+  --black: #181818;
+  --purple: #4B70E2;
+  --transition: 1.25s;
+}
+
+.main {
+  position: relative;
+  width: 1000px;
+  min-width: 1000px;
+  height: 600px;
+  padding: 25px;
+  background-color: var(--neu-1);
+  box-shadow: 10px 10px 10px var(--neu-2),
+              -10px -10px 10px var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) { .main { transform: scale(.7); } }
+@media (max-width: 1000px) { .main { transform: scale(.6); } }
+@media (max-width: 800px)  { .main { transform: scale(.5); } }
+@media (max-width: 600px)  { .main { transform: scale(.4); } }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  padding: 25px;
+  background-color: var(--neu-1);
+  transition: var(--transition);
+}
+
+.a-container {
+  z-index: 100;
+  left: calc(100% - 600px);
+}
+
+.b-container {
+  left: calc(100% - 600px);
+  z-index: 0;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.form__input {
+  width: 350px;
+  height: 40px;
+  margin: 4px 0;
+  padding-left: 25px;
+  font-size: 13px;
+  letter-spacing: .15px;
+  border: none;
+  outline: none;
+  background-color: var(--neu-1);
+  border-radius: 8px;
+  transition: .25s ease;
+  box-shadow: inset 2px 2px 4px var(--neu-2),
+              inset -2px -2px 4px var(--white);
+}
+
+.form__input:focus {
+  box-shadow: inset 4px 4px 4px var(--neu-2),
+              inset -4px -4px 4px var(--white);
+}
+
+.form__span {
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.form__link {
+  color: var(--black);
+  font-size: 15px;
+  margin-top: 25px;
+  border-bottom: 1px solid var(--gray);
+  line-height: 2;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 3;
+  color: var(--black);
+}
+
+.description {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.button {
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  margin-top: 50px;
+  font-weight: 700;
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  outline: none;
+  box-shadow: 8px 8px 16px var(--neu-2),
+              -8px -8px 16px var(--white);
+}
+
+/* SWITCH PANEL */
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 400px;
+  padding: 50px;
+  background-color: var(--neu-1);
+  overflow: hidden;
+  z-index: 200;
+  transition: var(--transition);
+  box-shadow: 4px 4px 10px var(--neu-2),
+              -4px -4px 10px var(--white);
+}
+
+.switch__circle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: var(--neu-1);
+  box-shadow: inset 8px 8px 12px var(--neu-2),
+              inset -8px -8px 12px var(--white);
+  bottom: -60%;
+  left: -60%;
+}
+
+.switch__circle--t {
+  top: -30%;
+  left: 60%;
+  width: 300px;
+  height: 300px;
+}
+
+.switch__container {
+  position: absolute;
+  width: 400px;
+  padding: 50px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.switch__button:hover {
+  transform: scale(.985);
+}
+
+.switch__button:active {
+  transform: scale(.97);
+}
+
+/* Animations */
+.is-txr { left: calc(100% - 400px); }
+.is-txl { left: 0; }
+.is-z200 { z-index: 200; }
+.is-hidden { visibility: hidden; opacity: 0; }
+
+.is-gx { animation: is-gx var(--transition); }
+
+@keyframes is-gx {
+  0%, 10%, 100% { width: 400px; }
+  30%, 50% { width: 500px; }
+}
